@@ -20,3 +20,4 @@ urlpatterns = [
     path('amount-statictic', views.StaticticAPIView.as_view()),
     
 ]
+a =10
