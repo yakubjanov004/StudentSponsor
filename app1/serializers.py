@@ -31,8 +31,18 @@ class StudentSerializers(serializers.ModelSerializer):
     
     class Meta:
         model = models.Student
-        exclude = ('phone', 'created_at', 'updated_at',)
+        exclude = ('created_at', 'updated_at',)
+
+class StudentCreateSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = models.Student
+        exclude = ('created_at', 'updated_at',)
         
+class StudentUpdateSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = models.Student
+        exclude = ('created_at', 'updated_at',)
+
 class StudentSponsorSerializers(serializers.ModelSerializer): 
     class Meta:
         model = models.Student_Sponsor
@@ -83,3 +93,13 @@ class BaseSerializers(serializers.ModelSerializer):
     class Meta:
         model = models.BaseModel
         fields = '__all__'
+
+class GraphicSerializer(serializers.Serializer):
+    month = serializers.IntegerField()
+    sponsor_amount = serializers.DecimalField(max_digits=10, decimal_places=2)
+    student_amount = serializers.DecimalField(max_digits=10, decimal_places=2)
+
+class StaticticSerializer(serializers.Serializer):
+    total_paid_amount = serializers.DecimalField(max_digits=10, decimal_places=2)
+    total_required_amount = serializers.DecimalField(max_digits=10, decimal_places=2)
+    total_unpaid_amount = serializers.DecimalField(max_digits=10, decimal_places=2)

@@ -9,7 +9,7 @@ urlpatterns = [
 
     path('talaba-list/', views.TalabaListAPIView.as_view()),
     path('talaba-create/', views.TalabaCreateAPIView.as_view()),
-    path('talaba-retriece-update/', views.TalabaRetrieveAPIView.as_view()),
+    path('talaba-retrieve/<int:pk>/', views.TalabaRetrieveAPIView.as_view()),
     path('talaba-update/<int:pk>/', views.TalabaUpdateAPIView.as_view()),
 
     path('sponsorStudent-list/', views.SponsorStudentListAPIView.as_view()),
@@ -17,7 +17,10 @@ urlpatterns = [
     path('sponsorStudent-update/<int:pk>/', views.SponsorStudentUpdateAPIView.as_view()),
 
 
-    path('amount-statictic', views.StaticticAPIView.as_view()),
+    path('amount-statictic/', views.StaticticAPIView.as_view()),
+    path('amount-statictic-list/', views.StaticticAPIView.as_view()),
+    path('graphic/', views.GraphicAPIView.as_view()),
+    path('graphiclist/', views.GraphicListView.as_view()),
+    
     
 ]
-a =10
