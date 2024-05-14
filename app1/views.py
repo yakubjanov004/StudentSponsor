@@ -3,7 +3,7 @@ from rest_framework.generics import ListAPIView,CreateAPIView,UpdateAPIView,Retr
 from app1 import serializers
 from app1 import models
 from rest_framework.views import APIView,Response
-from django_filters.rest_framework import DjangoFilterBackend
+# from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter
 
 # Create your views here.
@@ -27,7 +27,7 @@ class SponsorUpdateAPIView(UpdateAPIView):
 class TalabaListAPIView(ListAPIView):
     serializer_class = serializers.StudentSerializers
     queryset = models.Student.objects.all()
-    filter_backends = [DjangoFilterBackend, SearchFilter]
+    # filter_backends = [DjangoFilterBackend, SearchFilter]
     filterset_fields = ('student_type', 'university')
     search_fields = ('full_name',)
 
@@ -49,7 +49,7 @@ class TalabaUpdateAPIView(UpdateAPIView):
 class SponsorStudentListAPIView(ListAPIView):
     serializer_class = serializers.StudentSponsorSerializers
     queryset = models.Student_Sponsor.objects.all()
-    filter_backends = [DjangoFilterBackend, SearchFilter]
+    # filter_backends = [DjangoFilterBackend, SearchFilter]
     filterset_fields = ('sponsor', 'student')
     search_fields = ('sponsor', 'student',)
 
