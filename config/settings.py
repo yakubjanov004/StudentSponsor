@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'app1',
     'rest_framework',
     'drf_yasg',
-    # 'django_filters',
 
 ]
 
